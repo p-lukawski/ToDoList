@@ -1,6 +1,32 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+
+    function getDateAndHour() {
+
+            var currentdate = new Date();
+            var datetime = currentdate.getDate() + "/"
+                +(currentdate.getMonth()+1)  + "/"
+                + currentdate.getFullYear() + ' '
+                + currentdate.getHours() + ":"
+                + currentdate.getMinutes() + ":"
+                + currentdate.getSeconds();
+
+            var clock = document.getElementById('clock');
+        clock.innerText = datetime;
+    }
+
+    setInterval(function () {
+
+        getDateAndHour();
+
+    },1000);
+
+
+
+
+
+
     var input = document.getElementById('taskInput');
     var priorInput = document.getElementById('priorInput');
     var taskButton = document.getElementById('addTaskButton');
