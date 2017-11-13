@@ -49,9 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 var newTaskLi = document.createElement('li');
                 newTaskLi.dataset.id = priorInput.value;
                 existingTaskArr.push(newTaskLi);
-                newTaskLi.innerHTML = '<input type="checkbox" id="taskLi"> </input>' +
-                    '<h2 id="taskLi" contenteditable="true">' + inputValue + '</h2>' +
-                    '<button id="taskLi">Delete</button>';
+                newTaskLi.innerHTML = '<input type="checkbox" class="checkbox"> </input>' +
+                    '<h2 contenteditable="true">' + inputValue + '</h2>' +
+                    '<button>Delete</button>';
                 newTaskLi.style.listStyleType = "none";
                 if(existingTask === null){
                     taskList.appendChild(newTaskLi);
