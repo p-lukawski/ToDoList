@@ -10,18 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function getDateAndHour() {
+        var daysArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        var currentDate = new Date();
+        var day = daysArr[currentDate.getDay() - 1];
+        var date = currentDate.getDate() + "/"
+            +(currentDate.getMonth()+1)  + "/"
+            + currentDate.getFullYear() + ' ';
+        var time = addZero(currentDate.getHours()) + ':'
+            + addZero(currentDate.getMinutes()) + ':'
+            + addZero(currentDate.getSeconds());
 
-            var currentdate = new Date();
-            var date = currentdate.getDate() + "/"
-                +(currentdate.getMonth()+1)  + "/"
-                + currentdate.getFullYear() + ' ';
-            var time = addZero(currentdate.getHours()) + ':'
-                + addZero(currentdate.getMinutes()) + ':'
-                + addZero(currentdate.getSeconds());
 
-
-            var clock = document.getElementById('clock');
-        clock.innerText = date + ' ' + time;
+        var clock = document.getElementById('clock');
+        clock.innerText = day + ' ' + date + ' ' + time;
     }
 
     setInterval(function () {
