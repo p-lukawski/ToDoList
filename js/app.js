@@ -1,19 +1,27 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    function addZero(i) {
+        if(i < 10){
+            i = '0' + i;
+        }
+        return i;
+    }
+
 
     function getDateAndHour() {
 
             var currentdate = new Date();
-            var datetime = currentdate.getDate() + "/"
+            var date = currentdate.getDate() + "/"
                 +(currentdate.getMonth()+1)  + "/"
-                + currentdate.getFullYear() + ' '
-                + currentdate.getHours() + ":"
-                + currentdate.getMinutes() + ":"
-                + currentdate.getSeconds();
+                + currentdate.getFullYear() + ' ';
+            var time = addZero(currentdate.getHours()) + ':'
+                + addZero(currentdate.getMinutes()) + ':'
+                + addZero(currentdate.getSeconds());
+
 
             var clock = document.getElementById('clock');
-        clock.innerText = datetime;
+        clock.innerText = date + ' ' + time;
     }
 
     setInterval(function () {
